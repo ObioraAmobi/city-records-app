@@ -62,12 +62,12 @@ class test_gps(unittest.TestCase):
         self.assertEqual(len(list(result)), 0)
 
     # testing that the filter returns only one city when only one city in my test city records is within distant limit
-    def test_filter_no_city(self):
+    def test_filter_one_city(self):
         result = filter_cities((51, -175), 300, self.test_city_records())
         self.assertEqual(len(list(result)), 1)
 
     # testing that the filter returns all cities when all are within distant limit
-    def test_filter_no_city(self):
+    def test_filter_all_cities(self):
         result = filter_cities((51, -175), 99999, self.test_city_records())
         self.assertEqual(len(list(result)), 5)
 
